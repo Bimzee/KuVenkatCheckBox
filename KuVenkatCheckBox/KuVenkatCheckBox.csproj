@@ -139,6 +139,7 @@
     <Content Include="Views\Home\List.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\Url.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\UrlTemplate.cshtml" />
+    <Content Include="Views\Home\Edit.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

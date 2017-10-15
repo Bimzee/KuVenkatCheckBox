@@ -60,18 +60,29 @@ namespace KuVenkatCheckBox.Controllers
         // GET: Home/Edit/5
         public ActionResult Edit(int id)
         {
-            return View();
+            EmployeDataModel db = new EmployeDataModel();
+            var emp = db.Employees.Single(x => x.Id == id);
+
+            return View(emp);
         }
 
         // POST: Home/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        public ActionResult Edit(Employee employee)
         {
             try
             {
-                // TODO: Add update logic here
+                if(ModelState.IsValid)
+                {
+                    EmployeDataModel db = new EmployeDataModel();
+                    var emp = db.Employees.Single(x => x.Id == employee.Id);
 
-                return RedirectToAction("Index");
+                    emp.FullName = employee.FullName;
+                    emp.Gender = employee.Gender;
+
+                    db.SaveChanges();
+                }
+                return RedirectToAction("Details",new { id = employee.Id });
             }
             catch
             {

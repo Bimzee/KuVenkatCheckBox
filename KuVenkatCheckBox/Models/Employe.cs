@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.ComponentModel.DataAnnotations;
+using System.Web.Mvc;
+using System.ComponentModel;
 
 namespace KuVenkatCheckBox.Models
 {
@@ -28,9 +30,11 @@ namespace KuVenkatCheckBox.Models
         [DataType(DataType.Currency)]
         public int Salary { get; set; }
 
-        [ScaffoldColumn(false)]
+        //[ScaffoldColumn(false)]
+        [HiddenInput(DisplayValue =false)]
         public int Id { get; set; }
 
+        [ReadOnly(true)]
         [DataType(DataType.EmailAddress)]
         public string EmailAddress { get; set; }
 
