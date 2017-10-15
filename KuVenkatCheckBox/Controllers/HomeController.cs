@@ -22,9 +22,10 @@ namespace KuVenkatCheckBox.Controllers
             EmployeDataModel db = new EmployeDataModel();
             var emp= db.Employees.Single(x => x.Id == id);
 
+            ViewData["EmployeeData"] = emp;
 
-
-            return View(emp);
+            return View();
+            //return View(emp);
         }
 
         public ActionResult List()
@@ -72,7 +73,7 @@ namespace KuVenkatCheckBox.Controllers
         {
             try
             {
-                if(ModelState.IsValid)
+                 if(ModelState.IsValid)
                 {
                     EmployeDataModel db = new EmployeDataModel();
                     var emp = db.Employees.Single(x => x.Id == employee.Id);
