@@ -35,6 +35,7 @@ namespace KuVenkatCheckBox.Models
         public string EmailAddress { get; set; }
 
         [DataType(DataType.Url)]
+        [UIHint("UrlTemplate")]
         public string PersonalWebSite { get; set; }
     }
 }
