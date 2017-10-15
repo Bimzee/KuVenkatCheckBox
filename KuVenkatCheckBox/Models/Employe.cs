@@ -7,6 +7,7 @@ using System.ComponentModel.DataAnnotations;
 namespace KuVenkatCheckBox.Models
 {
     [MetadataType(typeof(EmployeeMetadat))]
+    [DisplayColumn("FullName")]
     public partial class Employee
     {
     }
@@ -23,10 +24,17 @@ namespace KuVenkatCheckBox.Models
         [DisplayFormat(NullDisplayText ="Gender Not specified")]
         public string Gender { get; set; }
 
-        [ScaffoldColumn(false)]
+        [ScaffoldColumn(true)]
+        [DataType(DataType.Currency)]
         public int Salary { get; set; }
 
         [ScaffoldColumn(false)]
         public int Id { get; set; }
+
+        [DataType(DataType.EmailAddress)]
+        public string EmailAddress { get; set; }
+
+        [DataType(DataType.Url)]
+        public string PersonalWebSite { get; set; }
     }
 }

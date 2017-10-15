@@ -22,7 +22,17 @@ namespace KuVenkatCheckBox.Controllers
             EmployeDataModel db = new EmployeDataModel();
             var emp= db.Employees.Single(x => x.Id == id);
 
+
+
             return View(emp);
+        }
+
+        public ActionResult List()
+        {
+            Company company = new Company();
+
+            return View(company);
+
         }
 
         // GET: Home/Create
