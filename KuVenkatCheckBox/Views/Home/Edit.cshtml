@@ -1,5 +1,8 @@
 ﻿@model KuVenkatCheckBox.Models.Employee
 
+
+<script src="~/Scripts/jquery-3.2.1.js"></script>
+
 @using (Html.BeginForm())
 {
     @Html.EditorForModel()
@@ -8,3 +11,17 @@
     <input type="submit" value="Submit" />
 
 }
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('input[type=datetime]').datepicker({
+            dateFormat: "dd/M/yy",
+            changeMonth: true,
+            changeYear: true,
+            yearRange: "-60:+0"
+        });
+    });
+    //$(function () {
+    //    //$("input:text.date").datepicker({ dateFormat: "dd/mm/yy" });
+    //    $('#input:text.date').datepicker();
+    //});
+</script>
